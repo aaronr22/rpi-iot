@@ -1,4 +1,4 @@
-var HOST = "localhost:3000";
+var HOST = "https://rpi-iot.herokuapp.com/";
 var SERVER = "http://" + HOST + "/";
 
 function doAjaxCall(method, cmd, params, fcn) {
@@ -25,6 +25,6 @@ $(() => {
         console.log('in submit');
         doAjaxCall("POST", "sendMessage", { tmp: "a" }), function (res) {
             console.log("success");
-        }
+        };
     });
 });
