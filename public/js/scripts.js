@@ -1,5 +1,5 @@
-var HOST = "https://rpi-iot.herokuapp.com/";
-var SERVER = "http://" + HOST + "/";
+var SERVER = "https://rpi-iot.herokuapp.com/";
+//var SERVER = "http://" + HOST + "/";
 
 function doAjaxCall(method, cmd, params, fcn) {
     $.ajax(
