@@ -49,7 +49,7 @@ var publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.set('port', (process.env.PORT || 5000));
 app.get("/", function (req, res) {
   res.render("index");
 });
@@ -65,8 +65,12 @@ app.use(function (req, res) {
   res.status(404).render("404");
 });
 
-http.createServer(app).listen(3000, function () {
-  console.log("Tasks app started.");
+// http.createServer(app).listen(process.env.PORT || 5000, function () {
+//   console.log("Tasks app started.");
+// });
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 function wrap(txt, callb) {
