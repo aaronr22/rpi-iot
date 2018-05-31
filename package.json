@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "^2.18.0"
+    "mqtt": "^2.18.0",
+    "express": "*",
+    "body-parser": "*",
+    "path": "*",
+    "http": "*",
+    "url": "*"
   }
 }
