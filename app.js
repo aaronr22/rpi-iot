@@ -35,10 +35,12 @@ function sendMsg() {
 }
 
 
+
+var url = require('url');
+
 var http = require("http");
-var path = require("path");
 var express = require("express");
-var logger = require("morgan");
+var path = require("path");
 var bodyParser = require("body-parser");
 
 
@@ -54,7 +56,10 @@ app.get("/", function (req, res) {
 
 app.post("/sendMessage", function (req, res) {
   sendMsg();
-  res.end();
+  var query = url.parse(req.url, true).query;
+  var callback = query.callback;
+  var t = wrap(JSON.stringify("bats"), callback);
+  res.end(t);
 });
 app.use(function (req, res) {
   res.status(404).render("404");
@@ -63,3 +68,7 @@ app.use(function (req, res) {
 http.createServer(app).listen(3000, function () {
   console.log("Tasks app started.");
 });
+
+function wrap(txt, callb) {
+  return callb + "(" + txt + ")";
+}
