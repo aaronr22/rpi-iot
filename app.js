@@ -45,8 +45,8 @@ var bodyParser = require("body-parser");
 
 
 var app = express();
-var publicPath = path.resolve(__dirname, "public");
-app.use(express.static(publicPath));
+app.set('view engine', 'html');
+app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('port', (process.env.PORT || 5000));
