@@ -13,7 +13,7 @@ function doAjaxCall(method, cmd, params, fcn) {
                 fcn(result)
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert("Error: " + errorThrown);
+                alert("Error1: " + errorThrown);
             }
         }
     );
