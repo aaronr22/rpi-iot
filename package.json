@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "mqtt": "^2.18.0",
+    "ejs": "^2.3.3",
     "express": "*",
     "body-parser": "*",
     "path": "*",
     "http": "*",
     "url": "*"
+
   }
 }
