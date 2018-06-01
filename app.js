@@ -46,13 +46,13 @@ var bodyParser = require("body-parser");
 
 var app = express();
 //app.set('view engine', 'html');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('port', (process.env.PORT || 5000));
-app.get("/", function (req, res) {
-  res.render("index");
-});
+// app.get("/", function (req, res) {
+//   res.render("index");
+// });
 
 app.post("/sendMessage", function (req, res) {
   sendMsg();
