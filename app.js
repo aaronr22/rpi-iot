@@ -50,13 +50,14 @@ app.set("views", path.resolve(__dirname, "views"));
 app.use(express.static(path.join(__dirname, '/')));
 app.set("view engine", "ejs");
 
-
-
 app.use(bodyParser.urlencoded({ extended: false }));
-app.set('port', (process.env.PORT || 5000));
+
 app.get("/", function (req, res) {
-  res.render("index");
+    res.render("index");
 });
+
+app.set('port', (process.env.PORT || 5000));
+
 
 app.post("/sendMessage", function (req, res) {
   sendMsg();
