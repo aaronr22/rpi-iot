@@ -59,7 +59,7 @@ app.get("/", function (req, res) {
 app.set('port', (process.env.PORT || 5000));
 
 
-app.post("/sendMessage", function (req, res) {
+app.get("/sendMessage", function (req, res) {
   sendMsg();
   var query = url.parse(req.url, true).query;
   var callback = query.callback;

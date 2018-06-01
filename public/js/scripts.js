@@ -23,7 +23,7 @@ function doAjaxCall(method, cmd, params, fcn) {
 $(() => {
     $("#submitBtn").click(function () {
         console.log('in submit');
-        doAjaxCall("POST", "sendMessage", { tmp: "a" }, function (res) {
+        doAjaxCall("GET", "sendMessage", { tmp: "a" }, function (res) {
             console.log("success");
         });
     });
