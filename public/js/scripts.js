@@ -19,7 +19,7 @@ function doAjaxCall(method, cmd, params, fcn) {
     );
 }
 
-
+//on page load attach button handler 
 $(() => {
     $("#submitBtn").click(function () {
         console.log('in submit');
