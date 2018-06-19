@@ -8,10 +8,12 @@ Tools
 - Free Heroku host to run the website
 
 ```mermaid
+
 graph TD
 A(Mobile Device) --> B((Heroku Website))
 B --> |Mqtt Message|C((CouldMqtt Instance))
 C --> |Mqtt Message|D[fa:fa-lightbulb On/Off]
+
 ```
 # Setup Notes
 ## Set Up Raspberry Pi Zero W
