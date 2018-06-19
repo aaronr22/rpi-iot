@@ -21,11 +21,6 @@ client.on('connect', function () { // When connected
     });
   });
 
-  // publish a message to a topic
-  // client.publish('pi', 'IoT test message', function() {
-  //   console.log("Message is published");
-  //   //client.end(); // Close the connection when published
-  // });
 });
 function sendMsg() {
   client.publish('pi', 'IoT test message', function () {
@@ -34,7 +29,7 @@ function sendMsg() {
   });
 }
 
-
+//---------------------------------------------------------
 
 var url = require('url');
 
@@ -53,7 +48,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", function (req, res) {
-    res.render("index");
+  res.render("index");
 });
 
 app.set('port', (process.env.PORT || 5000));
@@ -66,15 +61,12 @@ app.get("/sendMessage", function (req, res) {
   var t = wrap(JSON.stringify("bats"), callback);
   res.end(t);
 });
+
 app.use(function (req, res) {
   res.status(404).render("404");
 });
 
-// http.createServer(app).listen(process.env.PORT || 5000, function () {
-//   console.log("Tasks app started.");
-// });
-
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3000, function () {
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
