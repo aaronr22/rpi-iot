@@ -8,8 +8,8 @@
 
 .h1 {
     font-size: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 
