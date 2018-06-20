@@ -41,9 +41,10 @@ url_str = os.environ.get('CLOUDMQTT_URL', 'mqtt://localhost:1883')
 url = urlparse.urlparse(url_str)
 topic = "pi"
 
-# Connect
-mqttc.username_pw_set("azwmqvjr", "FlMX_5UyUPlH")
-mqttc.connect("m12.cloudmqtt.com", 15199)
+# Connect - get User and Password from Instance Info under Details on CloudMqtt
+mqttc.username_pw_set("your User", "your Password")
+# get port from CloutMqtt Details Page
+mqttc.connect("m12.cloudmqtt.com", port)
 
 # Start subscribe, with QoS level 0
 mqttc.subscribe(topic, 0)
