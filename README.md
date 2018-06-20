@@ -3,14 +3,15 @@
 
 Create IoT devices by using a website to control lights and other devices from a mobile phone or computer
 
-Tools
+### Tools
 - Raspberry Pi Zero W to control the lights or device
 - Free CloudMqtt instance to control messages between the web client, the pi,  and the devices
 - Free Heroku host to run the website
-
-```
-https://unpkg.com/mermaid@7.1.0/dist/
-```
+### Parts
+- Raspberry Pi Zero W
+	- Starter Kit - $24.99 https://goo.gl/vQg7RL 
+	- Just the board with pins - $14.00 https://www.adafruit.com/product/3708
+- Relay - $5.99 https://goo.gl/vd3WmR
 
 ```mermaid
 graph TD
@@ -20,21 +21,25 @@ C --> |Mqtt Message|D[fa:fa-lightbulb On/Off]
 ```
 # Setup Notes
 ## Set Up Raspberry Pi Zero W
+
+1. Connect the Pi and parts 
 ![Schematic](https://github.com/aaronr22/rpi-iot/blob/master/rpi-schematic.png)
 
-Use RaspberryPi Zero W without a monitor
-  - https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor
+2.  Use RaspberryPi Zero W without a monitor
+		  - https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor
   
-  How to run the script
-  - Copy the `RaspberryPiFile.py` to your pi 
-  - Add your credentials from CloudMqtt where noted
-  - run the file with `python RaspberryPiFile.py`
+
+
+  3.  Run the script
+	   - Copy the `RaspberryPiFile.py` to your pi 
+	  - Add your credentials from CloudMqtt where noted
+	  - run the file with `python RaspberryPiFile.py`
 
   
-How to Keep the Script on the Pi Running After Closing Terminal
-  - Before running the python script, enter the command `screen`
-  - Run `python RaspberryPiFile.py`
-  - Now you can close out of the terminal and the script will contine to run
+4. How to Keep the Script on the Pi Running After Closing Terminal
+	  - Before running the python script, enter the command `screen`
+	  - Run `python RaspberryPiFile.py`
+	  - Now you can close out of the terminal and the script will contine to run
 
 ## Setup CloudMqtt
 
