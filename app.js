@@ -4,8 +4,8 @@ var mqtt = require('mqtt')
 var options = {
   port: 15199,
   clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
-  username: "azwmqvjr",
-  password: "FlMX_5UyUPlH",
+  username: process.env.mqttUser,
+  password: process.env.mqttPass,
 };
 
 
