@@ -1,4 +1,4 @@
-# rpi-iot
+# Raspberry Pi Iot Device
 
 
 Create IoT devices by using a website to control lights and other devices from a mobile phone or computer
@@ -25,7 +25,7 @@ C --> |Mqtt Message|D[fa:fa-lightbulb On/Off]
 1. Connect the Pi and parts 
 ![Schematic](https://github.com/aaronr22/rpi-iot/blob/master/rpi-schematic.png)
 
-2.  Use RaspberryPi Zero W without a monitor
+2.  Use RaspberryPi Zero W without a monitor and connect it to WiFi
 		  - https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor
   
 
