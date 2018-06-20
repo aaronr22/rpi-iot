@@ -43,4 +43,13 @@ Go the the `Users & ACL` tab on the left
 	-	Enter a message, and that message should pop up on the right under `received messages`
 
 ## Setup Heroku
-  Coming Soon
+Setup Node Environment on Heroku
+- https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+
+Setting Environment Variables for the Web App
+  - https://devcenter.heroku.com/articles/config-vars
+
+How to deploy changes once Heroku is set up
+- `git add *`
+- `git commit -m 'updated xyz`
+- `git push heroku master`
