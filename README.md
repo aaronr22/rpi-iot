@@ -1,7 +1,7 @@
 # rpi-iot
 
 
-Create a website to control lights and other devices
+Create IoT devices by using a website to control lights and other devices from a mobile phone or computer
 
 Tools
 - Raspberry Pi Zero W to control the lights or device
@@ -9,19 +9,20 @@ Tools
 - Free Heroku host to run the website
 
 ```mermaid
-
 graph TD
 A(Mobile Device) --> B((Heroku Website))
 B --> |Mqtt Message|C((CouldMqtt Instance))
 C --> |Mqtt Message|D[fa:fa-lightbulb On/Off]
-
 ```
 # Setup Notes
 ## Set Up Raspberry Pi Zero W
 Use RaspberryPi Zero W without a monitor
   - https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor
   
-  Copy the `RaspberryPiFile.py` to your pi
+  How to run the script
+  - Copy the `RaspberryPiFile.py` to your pi 
+  - Add your credentials from CloudMqtt where noted
+  - run the file with `python RaspberryPiFile.py`
 
   
 How to Keep the Script on the Pi Running After Closing Terminal
@@ -35,6 +36,7 @@ How to Keep the Script on the Pi Running After Closing Terminal
 Create a free instance
 https://customer.cloudmqtt.com/instance/create
 
+### Setup the instance
 Go the the `Users & ACL` tab on the left
 - Under `users` enter a name and password
 - Under `ACL` set the `type` to `topic`, under `pattern` select the user you just created in the previous step, then create a `topic` name in the next box that has they grey text `pattern`.
@@ -54,3 +56,5 @@ How to deploy changes once Heroku is set up
 - `git add *`
 - `git commit -m 'updated xyz`
 - `git push heroku master`
+
+
