@@ -20,6 +20,8 @@ C --> |Mqtt Message|D[fa:fa-lightbulb On/Off]
 ```
 # Setup Notes
 ## Set Up Raspberry Pi Zero W
+![Schematic](https://github.com/aaronr22/rpi-iot/blob/master/rpi-schematic.png)
+
 Use RaspberryPi Zero W without a monitor
   - https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor
   
