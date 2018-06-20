@@ -8,6 +8,10 @@ Tools
 - Free CloudMqtt instance to control messages between the web client, the pi,  and the devices
 - Free Heroku host to run the website
 
+```
+https://unpkg.com/mermaid@7.1.0/dist/
+```
+
 ```mermaid
 graph TD
 A(Mobile Device) --> B((Heroku Website))
