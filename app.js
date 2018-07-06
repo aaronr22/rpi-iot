@@ -1,6 +1,6 @@
 var mqtt = require('mqtt')
 
-
+//for username and password check the link for setting environment variables in Heroku
 var options = {
   port: 15199,
   clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
@@ -96,6 +96,7 @@ function wrap(txt, callb) {
 
 
 
+
   // =====================================
   // LOGIN ===============================
   // =====================================
@@ -161,3 +162,4 @@ function wrap(txt, callb) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
+
