@@ -65,33 +65,35 @@ module.exports = function (app, passport, client) {
         req.logout();
         res.redirect('/');
     });
+
+    function isLoggedIn(req, res, next) {
+
+        // if user is authenticated in the session, carry on 
+        if (req.isAuthenticated())
+            return next();
+    
+        // if they aren't redirect them to the home page
+        res.redirect('/');
+    }
+    
+    client.on('connect', function () { // When connected
+    
+        // subscribe to a topic
+        client.subscribe('pi', function () {
+            // when a message arrives, do something with it
+            client.on('message', function (topic, message, packet) {
+                console.log("Received '" + message + "' on '" + topic + "'");
+            });
+        });
+    
+    });
+    function sendMsg() {
+        client.publish('pi', 'IoT test message', function () {
+            console.log("Message is published");
+            //client.end(); // Close the connection when published
+        });
+    }
+    
 };
 
 // route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
-
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-}
-
-client.on('connect', function () { // When connected
-
-    // subscribe to a topic
-    client.subscribe('pi', function () {
-      // when a message arrives, do something with it
-      client.on('message', function (topic, message, packet) {
-        console.log("Received '" + message + "' on '" + topic + "'");
-      });
-    });
-  
-  });
-  function sendMsg() {
-    client.publish('pi', 'IoT test message', function () {
-      console.log("Message is published");
-      //client.end(); // Close the connection when published
-    });
-  }
