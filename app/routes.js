@@ -93,6 +93,14 @@ module.exports = function (app, passport, client) {
             //client.end(); // Close the connection when published
         });
     }
+
+    app.get("/sendMessage", function (req, res) {
+        sendMsg();
+        var query = url.parse(req.url, true).query;
+        var callback = query.callback;
+        var t = wrap(JSON.stringify("bats"), callback);
+        res.end(t);
+      });
     
 };
 
