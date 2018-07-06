@@ -103,6 +103,9 @@ module.exports = function (app, passport, client) {
         res.end(t);
       });
     
+      function wrap(txt, callb) {
+        return callb + "(" + txt + ")";
+      }
 };
 
 // route middleware to make sure a user is logged in
