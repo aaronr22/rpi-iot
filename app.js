@@ -11,9 +11,7 @@ var options = {
 
 var client = mqtt.connect('mqtt://m12.cloudmqtt.com', options);
 
-// var url = require('url');
 
-// var http = require("http");
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
@@ -50,8 +48,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get("/", function (req, res) {
   res.render("index");
 });
-
-// app.set('port', (process.env.PORT || 5000));
 
 
 app.use(function (req, res) {
