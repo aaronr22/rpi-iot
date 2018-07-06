@@ -2,6 +2,7 @@
 
 // app/routes.js
 module.exports = function (app, passport, client) {
+    var url = require('url');
 
     // =====================================
     // HOME PAGE (with login links) ========
