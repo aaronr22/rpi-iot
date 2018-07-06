@@ -11,29 +11,9 @@ var options = {
 
 var client = mqtt.connect('mqtt://m12.cloudmqtt.com', options);
 
-// client.on('connect', function () { // When connected
+// var url = require('url');
 
-//   // subscribe to a topic
-//   client.subscribe('pi', function () {
-//     // when a message arrives, do something with it
-//     client.on('message', function (topic, message, packet) {
-//       console.log("Received '" + message + "' on '" + topic + "'");
-//     });
-//   }); 
-
-// });
-// function sendMsg() {
-//   client.publish('pi', 'IoT test message', function () {
-//     console.log("Message is published");
-//     //client.end(); // Close the connection when published
-//   });
-// }
-
-//---------------------------------------------------------
-
-var url = require('url');
-
-var http = require("http");
+// var http = require("http");
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
@@ -71,16 +51,8 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-app.set('port', (process.env.PORT || 5000));
+// app.set('port', (process.env.PORT || 5000));
 
-
-// app.get("/sendMessage", function (req, res) {
-//   sendMsg();
-//   var query = url.parse(req.url, true).query;
-//   var callback = query.callback;
-//   var t = wrap(JSON.stringify("bats"), callback);
-//   res.end(t);
-// });
 
 app.use(function (req, res) {
   res.status(404).render("404");
@@ -90,76 +62,4 @@ app.listen(process.env.PORT || 3000, function () {
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-function wrap(txt, callb) {
-  return callb + "(" + txt + ")";
-}
-
-
-
-
-  // =====================================
-  // LOGIN ===============================
-  // =====================================
-  // show the login form
-//   app.get('/login', function (req, res) {
-
-//       // render the page and pass in any flash data if it exists
-//       res.render('login.ejs', { message: req.flash('loginMessage') });
-//   });
-
-//   // process the login form
-//   // app.post('/login', do all our passport stuff here);
-//   app.post('/login', passport.authenticate('local-login', {
-//       successRedirect: '/profile', // redirect to the secure profile section
-//       failureRedirect: '/login', // redirect back to the signup page if there is an error
-//       failureFlash: true // allow flash messages
-//   }));
-//   // =====================================
-//   // SIGNUP ==============================
-//   // =====================================
-//   // show the signup form
-//   app.get('/signup', function (req, res) {
-
-//       // render the page and pass in any flash data if it exists
-//       res.render('signup.ejs', { message: req.flash('signupMessage') });
-//   });
-
-//   // process the signup form
-//   // app.post('/signup', do all our passport stuff here);
-
-//   // process the signup form
-//   app.post('/signup', passport.authenticate('local-signup', {
-//       successRedirect: '/profile', // redirect to the secure profile section
-//       failureRedirect: '/signup', // redirect back to the signup page if there is an error
-//       failureFlash: true // allow flash messages
-//   }));
-
-//   // =====================================
-//   // PROFILE SECTION =====================
-//   // =====================================
-//   // we will want this protected so you have to be logged in to visit
-//   // we will use route middleware to verify this (the isLoggedIn function)
-//   app.get('/profile', isLoggedIn, function (req, res) {
-//       res.render('profile.ejs', {
-//           user: req.user // get the user out of session and pass to template
-//       });
-//   });
-
-//   // =====================================
-//   // LOGOUT ==============================
-//   // =====================================
-//   app.get('/logout', function (req, res) {
-//       req.logout();
-//       res.redirect('/');
-//   });
-
-//   function isLoggedIn(req, res, next) {
-
-//     // if user is authenticated in the session, carry on 
-//     if (req.isAuthenticated())
-//         return next();
-
-//     // if they aren't redirect them to the home page
-//     res.redirect('/');
-// }
 
